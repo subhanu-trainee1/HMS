@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Doctor Management System</title>
+<style>
+#main
+{
+background-color:#f2f2f2;
+}
+
+#header
+{
+width:100%;
+height:50px;
+text-align:center;
+text-decoration:underline;
+color:#000000;
+}
+
+input[type=text],  
+input[type=number],
+input[type=email],
+input[type=datetime-local]
+{
+width: 100%;
+padding: 8px 20px;
+margin: 8px 0;
+box-sizing: border-box;
+border: 2px solid;
+border-radius: 4px;
+border: 1px solid #ccc;
+}
+textarea, select
+{
+width: 100%;
+padding: 8px 20px;
+margin: 8px 0;
+box-sizing: border-box;
+border: 2px solid;
+border-radius: 4px;
+border: 1px solid #ccc;
+}
+
+input[type=submit], input[type=reset],input[type=button] {
+background-color: #FFFFFF;
+border: 1px solid #ffd8de;
+color: green;
+padding: 16px 32px;
+text-decoration: none;
+margin: 4px 2px;
+cursor: pointer;
+margin-left:120px;
+border-radius:10px;
+}
+
+input[type=submit]:hover, input[type=reset]:hover ,input[type=button]:hover
+{
+background-color:#66bb55;
+color:#FFFFFF;
+}
+
+textarea:invalid
+{
+border-color:#FF0000;
+background:#f0dada;
+}
+
+input:invalid,
+input:out-of-range {
+border-color:#FF0000;
+background:#f0dada;
+}
+
+#content
+{
+float:left;
+width:800px;
+height:300px;
+margin-left:250px;
+margin-top:50px;
+}
+
+#form
+{
+float:left;
+width:100px;
+
+}
+
+</style>
+
+<script>
+function validateBedForm() {
+	
+var letters = /^[A-Za-z]+$/;  
+if(docName.value.match(letters))  
+{  
+return true;  
+}  
+else  
+{  
+alert('Username must have alphabet characters only');  
+docName.focus();  
+return false;  
+}  
+}
+}
+</script>
+
+</head>
+
+<body id="main">
+<!-- Header starts -->
+<div id="header">
+	<h1><b>Hospital Management System</b></h1>
+
+</div>
+<!-- Header Ends -->
+
+<form action="LoginForm.html" name="bedForm" id="content" method="post" onsubmit="return validateBedForm()" >
+
+	<fieldset>
+		<legend><h2>Doctor Management System :</h2></legend>
+			
+			<label for="docID" style="font-size:20px">Doctor ID	:*</label>
+  			<input type="text" id="docID" name="docID" placeholder="Enter Doctor ID" required autofocus="autofocus">	<br />
+			
+			<label for="docName" style="font-size:20px">Doctor Name	:*</label>
+  			<input type="text" id="docName" name="docName" placeholder="Enter Doctor Name" required >	<br /><br />
+			
+			<label for="gender" style="font-size:20px">Gender	:</label>
+  			<input type="radio" id="gender" name="gender" checked="checked" >Male
+			<input type="radio" id="gender" name="gender" >Female
+			<input type="radio" id="gender" name="gender" >Other	<br /><br />
+			
+			<label for="Age" style="font-size:20px">Age	:*</label>
+  			<input type="number" id="age" name="age" placeholder="Enter The Age" required min="18" max="150">	<br /><br />
+			
+			<label for="spec" style="font-size:20px">Specialization	:*</label>
+  			<input type="text" id="spec" name="spec" placeholder="Enter Doctor Specialization" required >	<br /><br />
+			
+			<label for="exp" style="font-size:20px">Experience	:*</label>
+  			<input type="number" id="exp" name="exp" placeholder="Enter Doctor Experience" required min="0" max="50">	<br /><br />
+			
+			<label for="achieve" style="font-size:20px">Achievements	:</label>
+  			<textarea id="achieve" name="achieve" placeholder="Enter Doctor Achievement(s)"  ></textarea>	<br /><br />
+			
+			<label for="number" style="font-size:20px">Phone Number	:*</label>
+  			<input type="text" id="number" name="number" placeholder="Enter Doctor Phone Number" required maxlength="10">	<br /><br />
+			
+			<label for="email" style="font-size:20px">Email ID	:*</label>
+  			<input type="email" id="email" name="email" placeholder="Enter Doctor Email ID" required >	<br /><br />
+			
+			<label for="add" style="font-size:20px">Address	:*</label>
+  			<textarea id="add" id="add" name="add" placeholder="Enter Doctor Address"  required ></textarea>	<br /><br />
+			
+			<label for="country" style="font-size:20px">Country	:*</label>
+			<select type="text" id="country" name="country" required >
+            	<option selected="selected">India</option>
+            	<option>Other</option>
+        	</select>
+			
+			<label for="state" style="font-size:20px">State	:*</label>
+			<select type="text" id="state" name="state" required >
+            	<option>Gujarat</option>
+				<option selected="selected">Karnataka</option>
+            	<option>Maharashtra</option>
+        	</select>
+			
+			<label for="city" style="font-size:20px">City	:*</label>
+  			<input type="text" id="city" name="city" placeholder="Enter City Name" required >	<br /><br />
+			
+			<label for="code" style="font-size:20px">Postal Code	:*</label>
+  			<input type="text" id="code" name="code" placeholder="Enter Postal Code" required maxlength="6">	<br /><br />
+			
+			<label for="Age" style="font-size:20px">Available Time	:*</label>
+  			<input type="datetime-local" value="2016-10-01T10:30:00" id="age" name="age" placeholder="Enter The Time of Doctor's Availability" required >	<br /><br />
+			
+			<input type="submit" value="Insert" >
+			<input type="reset" value="Reset">
+			<input type="button" value="Back" >
+			
+		</fieldset>
+
+</form>
+
+</body>
+</html>
